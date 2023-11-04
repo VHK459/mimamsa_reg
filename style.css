@@ -5,16 +5,19 @@
 }
 
 
+:root{
+    --light-blue: #88bdb;
+}
 
 
 body{
     width: 100%;
     height: 100vh;
     margin: 0;
-    background-color:#1b1b32;
-    color:#f5f6f7;
+    background-color:#dcdcfd;
+    color:#0b4987;
     font-family: Tahoma;
-    font-size: 0.9vw;
+    font-size: clamp(12px, 0.5vw 3px);
     line-height: 35px;
 }
 
@@ -35,7 +38,7 @@ form{
 
 
 input, textarea{
-    background-color: #0a0a23;
+    background-color: #9090c2;
     border: 1px solid #0a0a23;
 }
 
@@ -60,6 +63,35 @@ input[type="submit"]:hover {
 
 input[type=radio] {
     border: 0px solid black;
+    transform: translate(0px, 7px);
+
     width: 5%;
     height: 2em;
+}
+
+
+
+fieldset{
+    border: none;
+    padding: 2rem 0;
+    border-bottom: 3px solid rgb(59, 59, 79);
+}
+
+
+.input-fields{
+
+	margin:4px 0;
+}
+.input-fields input:not([type=radio]){
+	outline:none;
+	font-weight:400;
+	color:#333;
+	border-radius:5px;
+	border:1px solid #aaa;
+	padding:0 15px;
+	height:2vw;
+	margin:2vw 0;
+} 
+.input-fields input:is(:focus,:valid):not([type=radio]){
+	box-shadow:0 3px 6px rgba(0,0,0,0.13);
 }
