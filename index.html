@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
@@ -332,16 +333,9 @@
 
 
 
-<fieldset>
-    Note: If your team has 3 participants then please ignore this section
-</fieldset>
 
 
-
-
-
-
-<fieldset>
+<fieldset class="field-participant4">
 
 
             <h2>Participant 4</h2>
@@ -463,29 +457,37 @@
             <input type="radio" name="entry.1852754136" id="" value="__other_option__"> Other <br></li>
           
 <br>
+
+<div class="socials-other">
             <!-- for other option -->
-                <label for="none_of_above">If other then please write your how did you hear about Mimamsa ?</label> 
-                    <input type="text" name="entry.1852754136.other_option_response" id="" value="">
+            <label for="none_of_above">If other then please write your how did you hear about Mimamsa ?</label> 
+            <input type="text" name="entry.1852754136.other_option_response" id="" value="">
+</div>
 
-
+<div class="socials-youtube">
 <!-- Select Youtube channel -->
 
-        <li> <label for="Youtube channel">Select youtube channel name</label> 
-        <select name="entry.833168929" id="" required>
-            <option value="Yatharth Gairola">Yatharth Gairola</option>
-            <option value="Eknoor Singh">Eknoor Singh</option>
-            <option value="Vinit Kumar[IIT BOMBAY]">Vinit Kumar[IIT BOMBAY]</option>
-        </select></li>
-   
-<br>
-<!-- Select campus coordinator name -->
+<li> <label for="Youtube channel">Select youtube channel name</label> 
+    <select name="entry.833168929" id="" required>
+        <option value="Yatharth Gairola">Yatharth Gairola</option>
+        <option value="Eknoor Singh">Eknoor Singh</option>
+        <option value="Vinit Kumar[IIT BOMBAY]">Vinit Kumar[IIT BOMBAY]</option>
+    </select></li>
 
-        <li> <label for="campus coordinator ">Choose the campus coordinator you have heard from</label> 
-        <select name="entry.1111708708" id="" >
-            <option value="Abhinav Phukan">Abhinav Phukan</option>
-            <option value="Aditya Panigrahy">Aditya Panigrahy</option>
-            <option value="ADITYA RAVIKUMAR">ADITYA RAVIKUMAR</option>
-        </select></li>
+</div>
+<br>
+
+<div class="socials-cc">
+    <!-- Select campus coordinator name -->
+    
+            <li> <label for="campus coordinator ">Choose the campus coordinator you have heard from</label> 
+            <select name="entry.1111708708" id="" >
+                <option value="Abhinav Phukan">Abhinav Phukan</option>
+                <option value="Aditya Panigrahy">Aditya Panigrahy</option>
+                <option value="ADITYA RAVIKUMAR">ADITYA RAVIKUMAR</option>
+            </select></li>
+    
+</div>
 
 
            
@@ -498,4 +500,40 @@
      </div></div>
    
 </body>
+<script>
+
+$('.socials-other').hide()
+$('.socials-youtube').hide()
+$('.socials-cc').hide()
+
+$('input').on('change', function() {
+
+    if ($("input[name='entry.196976425']:checked").val() == '4') {
+        $('.field-participant4').show()
+    } else  {
+        $('.field-participant4').hide()
+    }
+
+    if ($("input[name='entry.1852754136']:checked").val() == "Campus coordinators") {
+        $('.socials-cc').show()
+    } else {
+        $('.socials-cc').hide()
+    }
+
+    if ($("input[name='entry.1852754136']:checked").val() == "Youtube") {
+        $('.socials-youtube').show()
+    } else {
+        $('.socials-youtube').hide()
+    }
+
+    if ($("input[name='entry.1852754136']:checked").val() == "__other_option__") {
+        $('.socials-other').show()
+    } else {
+        $('.socials-other').hide()
+    }
+});
+
+
+</script>
+
 </html>
