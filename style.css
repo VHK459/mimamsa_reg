@@ -26,6 +26,31 @@ h1, p{
 
 
 
+.imp{
+    aspect-ratio: 1;
+    width: 9%;
+}
+
+.logo{
+    display: absolute;
+}
+
+.logo > p{
+    margin: 0;
+    padding-left: 15%;
+    padding-right: 10%;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+
+.motto{
+    width: 100vw;
+    padding-left: 15%;
+    padding-right: 10%;
+    margin: 0 auto;
+}
+
 
 form{
     width: 100vw;
